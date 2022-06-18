@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t richcastro82/dca-node-app -f Dockerfile.dev .
+  - docker build -t dca-node-app -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true richcastro82/dca-node-app npm run test
+  - docker run -e CI=true dca-node-app npm run test
