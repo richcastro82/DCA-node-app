@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dca-node-app -f frontend/Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dca-node-app npm run test
